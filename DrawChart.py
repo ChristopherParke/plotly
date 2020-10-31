@@ -50,6 +50,10 @@ class DrawChart:
                         ), 
                             paper_bgcolor="rgb(245,245,219)", 
                             plot_bgcolor="rgb(245,245,219)")
+        # Label X axis
+        fig.update_xaxes(title_text="Region")
+        
+        # Draw Chart
         fig.show()
 
 regions = ['South', 'North']
