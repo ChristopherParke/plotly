@@ -3,15 +3,15 @@ from PIL import Image
 
 class DrawChart:
     """
-    Draw a bar chart using the plotly library
+    Draw a bar chart using the Plotly library
     """
     def barChart(regions, dataset):
-        southY = args[0]
-        northY = args[1]
+        southY = dataset[0]
+        northY = dataset[1]
         img = Image.open("salesBy.png")
 
         fig = go.Figure(data=[
-            #Draw green bars for Apples
+            # Draw green bars for "Apples"
             go.Bar(name='Apples', 
                     x=regions, 
                     y=southY, 
@@ -20,7 +20,7 @@ class DrawChart:
                     textposition='outside', 
                     texttemplate="%{y:$,}"),
 
-            #Draw orange bars for Oranges
+            # Draw orange bars for "Oranges"
             go.Bar(name='Oranges', 
                     x=regions, 
                     y=northY, 
@@ -30,7 +30,7 @@ class DrawChart:
                     texttemplate="%{y:$,}")
         ])
 
-        #add orange image
+        # Add Title Image
         fig.add_layout_image(
             dict(
                 source=img,
@@ -41,7 +41,7 @@ class DrawChart:
             )
         )
 
-        # Change the bar mode
+        # Setup Canvas Layout
         fig.update_layout(barmode='group', 
                             yaxis=dict(
                             title='Sales', 
