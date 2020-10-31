@@ -6,6 +6,9 @@ class DrawChart:
     Draw charts using the Plotly library
     """
     def barChart(regions, dataset):
+        """
+        Draw a bar chart
+        """
         southY = dataset[0]
         northY = dataset[1]
         img = Image.open("salesBy.png")
