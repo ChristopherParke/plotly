@@ -3,7 +3,7 @@ from PIL import Image
 
 class DrawChart:
     """
-    Draw a bar chart using the Plotly library
+    Draw charts using the Plotly library
     """
     def barChart(regions, dataset):
         southY = dataset[0]
