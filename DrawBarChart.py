@@ -15,7 +15,7 @@ class DrawBarChart:
     
     def __setBarData(self):
         """
-        Draw the bars for the Chart
+        Set the bar data to be drawn
         """
         myData = []
         for i in range(0, len(self.dataset)):
