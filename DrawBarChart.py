@@ -17,6 +17,9 @@ class DrawBarChart:
         self.paper_bgcolor = "rgb(245,245,219)"
         self.plot_bgcolor = "rgb(245,245,219)"
         self.title_text = "Region"
+        self.barmode = 'group'
+        self.ticketprefix = '$'
+        self.separatethousands = True
 
     
     def __setBarData(self):
@@ -99,11 +102,11 @@ class DrawBarChart:
 
         # Setup Canvas Layout
         fig.update_layout(
-                            barmode='group', 
+                            barmode=self.barmode, 
                             yaxis=dict(
                             title=self.canvasTitle, 
-                            tickprefix = '$', 
-                            separatethousands=True
+                            tickprefix = self.ticketprefix, 
+                            separatethousands=self.separatethousands
                         ), 
                             paper_bgcolor=self.paper_bgcolor, 
                             plot_bgcolor=self.plot_bgcolor
