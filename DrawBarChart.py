@@ -1,5 +1,6 @@
 import plotly.graph_objects as go
 from PIL import Image
+import random
 
 class DrawBarChart:
     """
@@ -36,12 +37,33 @@ class DrawBarChart:
 
         return myData
 
+    def __assignColors(self):
+        """
+        If data sets are increased beyond 2,
+        create a random color for each new set (bar)
+        """
+        myRange = len(dataset) - len(self.barColors)
+
+        if myRange > 0:
+            for i in range(0, myRange):
+                r = random.randint(0,255)
+                g = random.randint(0,255)
+                b = random.randint(0,255)
+                myBarColor = 'rgb('+ str(r) + ',' + str(g) + ',' + str(b) + ')'
+                self.barColors.append(myBarColor)
+
+
+
     def draw(self):
         """
         Draw a bar chart from the data
         """
         img = Image.open("salesBy.png")        
 
+        # Assign new bar colors if none are assigned
+        self.__assignColors()
+
+        # Set bar data
         myData = self.__setBarData()
 
         fig = go.Figure(data=myData)
@@ -77,8 +99,8 @@ regions = ['South', 'North']
 dataset = [[1234.56, 3241.45],[4329.92, 2987.43]]
 
 # EXAMPLE 2
-# regions = ['South', 'North', 'East']
-# dataset = [[1234.56, 3241.45, 3435.46],[4329.92, 443.50, 2987.43],[4329.92, 2987.43, 1234.55]]
+regions = ['South', 'North', 'East']
+dataset = [[1234.56, 3241.45, 3435.46],[4329.92, 443.50, 2987.43],[4329.92, 2987.43, 1234.55]]
 
 barChart = DrawBarChart(regions, dataset)
 
