@@ -62,7 +62,7 @@ class DrawBarChart:
 
         if myRange > 0:
             for i in range(0, myRange):
-                myDataTitle = "DynamicTitle" + str(i+1)
+                myDataTitle = "DynamicTitle " + str(i+1)
                 self.dataTitles.append(myDataTitle)
 
 
@@ -81,6 +81,7 @@ class DrawBarChart:
         # Set bar data
         myData = self.__setBarData()
 
+        # Draw bars
         fig = go.Figure(data=myData)
 
         # Add Title Image
