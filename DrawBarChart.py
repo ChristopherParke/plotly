@@ -53,6 +53,18 @@ class DrawBarChart:
                 self.barColors.append(myBarColor)
 
 
+    def __assignTitles(self):
+        """
+        if any datasets are not named,
+        they will be assigned a name.
+        """
+        myRange = len(dataset) - len(self.dataTitles)
+
+        if myRange > 0:
+            for i in range(0, myRange):
+                myDataTitle = "DynamicTitle" + str(i+1)
+                self.dataTitles.append(myDataTitle)
+
 
     def draw(self):
         """
@@ -62,6 +74,9 @@ class DrawBarChart:
 
         # Assign new bar colors if none are assigned
         self.__assignColors()
+
+        # Assign new titles if none are assigned
+        self.__assignTitles()
 
         # Set bar data
         myData = self.__setBarData()
