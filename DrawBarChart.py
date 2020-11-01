@@ -12,6 +12,11 @@ class DrawBarChart:
         self.barNames = ['Apples', 'Oranges']
         self.textposition = 'outside'
         self.texttemplate= "%{y:$,}"
+        self.canvasTitle = 'Sales'
+        self.paper_bgcolor = "rgb(245,245,219)"
+        self.plot_bgcolor = "rgb(245,245,219)"
+        self.title_text = "Region"
+
     
     def __setBarData(self):
         """
@@ -55,14 +60,14 @@ class DrawBarChart:
         # Setup Canvas Layout
         fig.update_layout(barmode='group', 
                             yaxis=dict(
-                            title='Sales', 
+                            title=self.canvasTitle, 
                             tickprefix = '$', 
                             separatethousands=True
                         ), 
-                            paper_bgcolor="rgb(245,245,219)", 
-                            plot_bgcolor="rgb(245,245,219)")
+                            paper_bgcolor=self.paper_bgcolor, 
+                            plot_bgcolor=self.plot_bgcolor)
         # Label X axis
-        fig.update_xaxes(title_text="Region")
+        fig.update_xaxes(title_text=self.title_text)
         
         # Draw Chart
         fig.show()
