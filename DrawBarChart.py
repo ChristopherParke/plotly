@@ -26,13 +26,15 @@ class DrawBarChart:
         myData = []
         for i in range(0, len(self.dataset)):
             myData.append(
-                go.Bar(name=self.dataTitles[i],
+                go.Bar(
+                        name=self.dataTitles[i],
                         x=self.dataTitles,
                         y=self.dataset[i],
                         marker_color=self.barColors[i],
                         text=self.dataset[i],
                         textposition=self.textposition,
-                        texttemplate=self.texttemplate)
+                        texttemplate=self.texttemplate
+                    )
             )
 
         return myData
@@ -96,14 +98,16 @@ class DrawBarChart:
         )
 
         # Setup Canvas Layout
-        fig.update_layout(barmode='group', 
+        fig.update_layout(
+                            barmode='group', 
                             yaxis=dict(
                             title=self.canvasTitle, 
                             tickprefix = '$', 
                             separatethousands=True
                         ), 
                             paper_bgcolor=self.paper_bgcolor, 
-                            plot_bgcolor=self.plot_bgcolor)
+                            plot_bgcolor=self.plot_bgcolor
+                        )
         # Label X axis
         fig.update_xaxes(title_text=self.title_text)
         
@@ -117,6 +121,7 @@ dataset = [[1234.56, 3241.45],[4329.92, 2987.43]]
 # EXAMPLE 2
 # regions = ['South', 'North', 'East']
 # dataset = [[1234.56, 3241.45, 3435.46],[4329.92, 443.50, 2987.43],[1399.92, 2987.43, 1234.55]]
+
 
 barChart = DrawBarChart(regions, dataset)
 
