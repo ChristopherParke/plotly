@@ -39,7 +39,7 @@ class DrawBarChart:
 
     def __assignColors(self):
         """
-        If data sets are increased beyond 2,
+        If there are more data sets than bar colors,
         create a random color for each new set (bar)
         """
         myRange = len(dataset) - len(self.barColors)
