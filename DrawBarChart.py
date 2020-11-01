@@ -102,15 +102,15 @@ class DrawBarChart:
 
         # Setup Canvas Layout
         fig.update_layout(
-                            barmode=self.barmode, 
-                            yaxis=dict(
-                            title=self.canvasTitle, 
-                            tickprefix = self.ticketprefix, 
-                            separatethousands=self.separatethousands
-                        ), 
-                            paper_bgcolor=self.paper_bgcolor, 
-                            plot_bgcolor=self.plot_bgcolor
-                        )
+            barmode=self.barmode, 
+            yaxis=dict(
+            title=self.canvasTitle, 
+            tickprefix = self.ticketprefix, 
+            separatethousands=self.separatethousands
+        ), 
+            paper_bgcolor=self.paper_bgcolor, 
+            plot_bgcolor=self.plot_bgcolor
+        )
         # Label X axis
         fig.update_xaxes(title_text=self.title_text)
         
@@ -123,7 +123,7 @@ dataset = [[1234.56, 3241.45],[4329.92, 2987.43]]
 
 # EXAMPLE 2
 # regions = ['South', 'North', 'East']
-# dataset = [[1234.56, 3241.45, 3435.46],[4329.92, 443.50, 2987.43],[1399.92, 2987.43, 1234.55]]
+# dataset = [[1234.56, 3241.45, 3435.46],[4329.92, 2987.43, 483.34],[1399.92, 2987.43, 1234.55]]
 
 barChart = DrawBarChart(regions, dataset)
 barChart.draw()
