@@ -68,8 +68,8 @@ class DrawBarChart:
         fig.show()
 
 # EXAMPLE 1
-# regions = ['South', 'North']
-# dataset = [[1234.56, 3241.45],[4329.92, 2987.43]]
+regions = ['South', 'North']
+dataset = [[1234.56, 3241.45],[4329.92, 2987.43]]
 
 # EXAMPLE 2
 # regions = ['South', 'North', 'East']
