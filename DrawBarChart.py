@@ -28,7 +28,7 @@ class DrawBarChart:
                         textposition=self.textposition,
                         texttemplate=self.texttemplate)
             )
-            
+
         return myData
 
     def draw(self):
@@ -72,10 +72,10 @@ class DrawBarChart:
 # dataset = [[1234.56, 3241.45],[4329.92, 2987.43]]
 
 # EXAMPLE 2
-regions = ['South', 'North', 'East']
-dataset = [[1234.56, 3241.45, 3435.46],[4329.92, 443.50, 2987.43],[4329.92, 2987.43, 1234.55]]
+# regions = ['South', 'North', 'East']
+# dataset = [[1234.56, 3241.45, 3435.46],[4329.92, 443.50, 2987.43],[4329.92, 2987.43, 1234.55]]
 
 barChart = DrawBarChart(regions, dataset)
 
-barChart.barColors = ['rgb(140,181,0)','rgb(255, 127, 0)', 'rgb(123, 255, 100)']
+# barChart.barColors = ['rgb(140,181,0)','rgb(255, 127, 0)', 'rgb(123, 255, 100)']
 barChart.draw()
